@@ -1,0 +1,40 @@
+#setup_text{
+    display: flex;
+    height:auto;
+    flex-direction: column;
+}
+.control_panel{
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    height: 5vh;
+}
+.main{
+    position:absolute;
+    top: 20vh;
+}
+#Board_Control{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+#cyton_daisy{
+    height: 20vh;
+    visibility: hidden;
+}
+#simulated{
+    height:20vh;
+    visibility: hidden;;
+}
+#span_text{
+    position: relative;
+    height:auto;
+    width:auto;
+    padding-bottom:2vh;
+}
+.board{
+    height:20vh;
+}
+/* .color_code{
+    padding-bottom:2vh;
+} */

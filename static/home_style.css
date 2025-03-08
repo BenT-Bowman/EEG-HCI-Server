@@ -1,0 +1,52 @@
+/* Reset default margins & paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full height & centered content */
+body {
+    background-color: rgb(96, 9, 133);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Centered container for buttons */
+#button-grid {
+    width: 40%;
+    max-width: 500px;
+    height: auto;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(2, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for buttons inside the grid */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(96, 9, 133);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Button Hover Effect */
+.nav-buttons:hover {
+    background-color: rgb(96, 9, 133);
+    color: white;
+    transform: scale(1.05);
+}

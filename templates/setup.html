@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+{% block main %}
+<body>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='setup_style.css') }}">
+
+<div class="main">
+    <div id="setup_text">
+        <div id="span_text">Let's ensure your EEG electrodes are properly connected! The 3D brain model below will visually indicate the status of each electrode. 
+            Use it to identify which electrodes need adjustment for optimal signal quality.
+            </div>
+
+        <div class="color_code" id="span_text" style="color:red">**Red** – Poor connection (electrode is "railed" or disconnected)  </div>
+        <div class="color_code" id="span_text" style="color:green"> **Green** – Good connection (electrode is properly placed)</div>
+
+        <div id="span_text">If an electrode appears **red**, try adjusting its position, ensuring firm contact with the scalp. **Proper skin contact is essential** for accurate EEG readings.
+            Use the 3D display below to monitor connectivity in real-time. You may need to reposition electrodes, apply conductive gel, or tighten the headset to improve signal quality.
+            
+            
+        </div>
+
+        <div id ="span_text">**Select your EEG board** from the dropdown menu to proceed:
+        </div>
+    </div>
+    <script class="test" type="module" src="{{url_for('static', filename='setup.js')}}"></script>
+
+    <div class="control_panel">
+        <p>
+            <select id="board_choice" onchange="hide_descriptions(this.value)">
+                <option value="select">Select</option>
+                <option value="cyton_daisy">Cyton Daisy</option>
+                <option value="simulated">Simulated</option>
+            </select>
+        </p>
+        <button id="clickMe">
+            START!
+        </button>
+        <button id="clickMe2">
+            STOP!
+        </button>
+        <a id="download_button" href="{{ url_for('downloader') }}">DOWNLOAD</a>
+    </div>
+    <div id="test"></div>
+    <script type="text/javascript" src="{{url_for('static', filename='setup_buttons.js')}}"></script>
+    <div id="Board_Control">
+        <div class="board" id="cyton_daisy">
+            <strong>Using the UltraCortex "Mark IV" EEG Headset?</strong>  
+            If so, adjusting the fit is easy! Simply **twist the nut in the electrode holder** to ensure each electrode sits snugly against your scalp. 
+            A **proper fit minimizes noise** and improves signal quality.
+            
+            <div id="cyton_daisy_nodes">
+                <button class="cyton_daisy_buttons" id="0">Fz</button>
+                <button class="cyton_daisy_buttons" id="1">C3</button>
+                <button class="cyton_daisy_buttons" id="2">Cz</button>
+                <button class="cyton_daisy_buttons" id="3">C4</button>
+                <button class="cyton_daisy_buttons" id="4">Pz</button>
+                <button class="cyton_daisy_buttons" id="5">PO7</button>
+                <button class="cyton_daisy_buttons" id="6">Oz</button>
+                <button class="cyton_daisy_buttons" id="7">PO8</button>
+                <button class="cyton_daisy_buttons" id="8">F5</button>
+                <button class="cyton_daisy_buttons" id="9">F7</button>
+                <button class="cyton_daisy_buttons" id="10">F3</button>
+                <button class="cyton_daisy_buttons" id="11">F1</button>
+                <button class="cyton_daisy_buttons" id="12">F2</button>
+                <button class="cyton_daisy_buttons" id="13">F4</button>
+                <button class="cyton_daisy_buttons" id="14">F6</button>
+                <button class="cyton_daisy_buttons" id="15">F8</button>
+            </div>
+        </div>
+        <div class="board" id="simulated">
+            **Using the Simulated Board?**  
+            The simulated mode is designed to test connectivity between the software and the 3D interface. 
+            If you encounter issues, check that your installation is correct and that all dependencies are properly set up.
+
+        </div>
+        
+    </div>
+{% endblock %}
+</body>
+</html>

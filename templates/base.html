@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <title>Live EEG Reading</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://unpkg.com/three@0.149.0/build/three.module.js"
+                }
+            }
+    </script>
+    </head>
+    <body>
+        <nav id="navigation">
+            <div class="nav-bar">
+                <a class="nav-buttons" id="home-button" href="{{ url_for('home') }}"><span>Home</span></a>
+                <a class="nav-buttons" href="{{ url_for('about')}}"><span>About</span></a>
+                <a class="nav-buttons" href="{{ url_for('tutorial') }}"><span>Tutorial</span></a>
+                <a class="nav-buttons" href="{{ url_for('setup') }}"><span>Setup</span></a>
+            </div>
+        </nav>
+        <div id="contents">
+            {% block main %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

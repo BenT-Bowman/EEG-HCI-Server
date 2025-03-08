@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="contents">
+    <h1>Tutorial</h1>
+    <p>Welcome to the EEG streaming web application! Follow the steps below to set up and use the platform.</p>
+
+    <h2>1. Setup and Access</h2>
+    <p>Before using the application, ensure that your EEG device is properly connected and configured:</p>
+    <ul>
+        <li>Connect your EEG device to your computer via the appropriate interface (USB, Bluetooth, etc.).</li>
+        <li>Ensure that all necessary drivers and software for your device are installed.</li>
+        <li>Download websocket from the Setup page under "Download"</li>
+        <li>Start the EEG data streaming executable on your device.</li>
+        <li>Follow the instructions on the Setup page to ensure all physical and digital tools are functional.</li>
+    </ul>
+
+    <h2>2. Navigating the Interface</h2>
+    <p>The web application consists of the following pages:</p>
+    <ul>
+        <li><strong>Home Page:</strong> Displays real-time EEG readings and visualizations.</li>
+        <li><strong>About Page:</strong> Provides background information on the project.</li>
+        <li><strong>Tutorial Page:</strong> This page, which guides users through setup and usage.</li>
+        <li><strong>Setup Page:</strong> Assists in configuring the EEG device and connection.</li>
+    </ul>
+
+    <h2>3. Real-Time EEG Streaming</h2>
+    <p>Once the connection is established, the app will begin displaying live EEG data:</p>
+    <ul>
+        <li>The application will attempt to connect to the EEG data source via WebSocket.</li>
+        <li>Once connected, EEG signals will be processed and displayed in real-time.</li>
+        <li>Graphical representations of electrode activity will update dynamically.</li>
+    </ul>
+</div>
+{% endblock %}

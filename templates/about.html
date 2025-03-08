@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="main" id="contents">
+        <h1>About This Project</h1>
+        
+        <div class="span_text">This project is designed to process and analyze EEG data in real-time, eventually utilizing machine learning techniques
+            to identify meaningful patterns. It serves as a foundation for future advancements in neurological research
+            and mental health assessment.</div>
+
+        <img src="{{ url_for('static', filename='brain_image.png') }}" alt="Brain Visualization" class="about-image">
+
+        <h2>Future Improvements</h2>
+        <p>
+            Future iterations will incorporate a deep learning model capable of remotely analyzing EEG data
+            to assess the likelihood of depression. This will provide users with an accessible, AI-driven tool 
+            for preliminary mental health insights. By leveraging neural networks and real-time data streaming, 
+            the system will enhance early detection and analysis, supporting both researchers and individuals.
+        </p>
+    </div>
+{% endblock %}

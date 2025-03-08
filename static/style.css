@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    display:inline-block;
+}
+ul {
+    list-style-type: disc; /* This ensures the bullet point style is active */
+}
+.main{
+    height: 200vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    position: relative;
+}
+
+#contents {
+    margin-top: 60px; /* Adjust this based on your navbar height */
+    padding: 20px;
+}
+
+#mytext{
+    position: sticky;
+    height: auto;
+}
+#newtext{
+    position: sticky;
+}
+#eeg_link{
+    height: auto;
+}
+canvas {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.topnav{
+    background-color: rgb(96, 9, 133);
+    overflow: auto;
+    height: 5vh;
+    width: 100vw;
+}
+
+a.active, a:hover{
+    background: violet;
+    transition: .5s;
+}
+
+.button{
+    position: relative;
+}
+
+.nav-bar{
+    /* background-color: rgb(96, 9, 133); */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 5%;
+    width: 100%; */
+}
+
+.nav-buttons{
+    display: table;
+    height: 20vh;
+    position: relative;
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+    padding: 5vw;
+}
+span{
+    display: table-cell;
+    vertical-align: middle;
+}
+nav {
+    height: 10vh;
+    background:rgb(96, 9, 133);
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow: hidden;
+    /* padding: 0rem calc((100vw - 1300px) / 2); */
+}
+#navigation{
+    position:fixed;
+    top:0px;
+    z-index: 10;
+}
+

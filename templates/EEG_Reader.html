@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live EEG Reading</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='eeg_reader_style.css') }}">
+    <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.18.0.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.149.0/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Home Navigation Bar -->
+    <div id="navbar">
+        <a href="{{ url_for('home') }}">Home</a>
+    </div>
+    
+    <!-- <a id="eeg_link" href="{{ url_for('home') }}">Home</a> -->
+    <script id="3dBrain" type="module" src="{{url_for('static', filename='eeg_reader.js')}}"></script>
+
+    <!-- Top section with test and control panel -->
+    <div id="top_section">
+        <div id="test"></div>
+        <div class="control_panel">
+            <p>
+                <select id="board_choice">
+                    <option value="simulated">Simulated</option>
+                    <option value="cyton_daisy">Cyton Daisy</option>
+                </select>
+            </p>
+            <button id="clickMe">START!</button>
+            <button id="clickMe2">STOP!</button>
+        </div>
+    </div>
+
+    <!-- EEG Graph List below the top section -->
+    <div id="graph_list">
+        <div class="Brain_names">
+            <div class="Brainwaves_text">Fz</div>
+            <div class="Brainwaves" id="Fz"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">C3</div>
+            <div class="Brainwaves" id="C3"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">Cz</div>
+            <div class="Brainwaves" id="Cz"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">C4</div>
+            <div class="Brainwaves" id="C4"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">Pz</div>
+            <div class="Brainwaves" id="Pz"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">PO7</div>
+            <div class="Brainwaves" id="PO7"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">Oz</div>
+            <div class="Brainwaves" id="Oz"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">PO8</div>
+            <div class="Brainwaves" id="PO8"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">F5</div>
+            <div class="Brainwaves" id="F5"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">F7</div>
+            <div class="Brainwaves" id="F7"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">F3</div>
+            <div class="Brainwaves" id="F3"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">F1</div>
+            <div class="Brainwaves" id="F1"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">F2</div>
+            <div class="Brainwaves" id="F2"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">F4</div>
+            <div class="Brainwaves" id="F4"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">F6</div>
+            <div class="Brainwaves" id="F6"></div>
+        </div>
+        <div class="Brain_names">
+            <div class="Brainwaves_text">F8</div>
+            <div class="Brainwaves" id="F8"></div>
+        </div>
+    </div>
+
+    <!-- Footer for attribution -->
+    <div id="footer">
+        <p>Brain Model used from <a href="https://sketchfab.com/3d-models/brain-areas-d64608a3978b47d8a39c5a15795ca8c4" target="_blank">"Brain Areas"</a> by <a href="https://sketchfab.com/versal" target="_blank">Versal</a>, licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY-4.0</a>.</p>
+    </div>
+
+</body>
+</html>
