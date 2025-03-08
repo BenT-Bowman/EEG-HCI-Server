@@ -1,9 +1,32 @@
 from flask import Flask, render_template, request, redirect
 from flask import send_from_directory
 from flask_cors import CORS
+import argparse
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5000"}})
+
+parser = argparse.ArgumentParser(description="Simple script with IP and port arguments")
+
+parser.add_argument(
+    "--ip",
+    type=str,
+    default="127.0.0.1",
+    required=False,
+    help="IP address to bind the server (default: 127.0.0.1)"
+)
+
+parser.add_argument(
+    "--port",
+    type=int,
+    default=5000,
+    required=False,
+    help="Port number to run the server (default: 5000)"
+)
+
+args = parser.parse_args()
+ip, port = args.ip, args.port
+
+CORS(app, resources={r"/*": {"origins": f"http://{ip}:{port}"}})
 
 @app.route("/")
 @app.route("/home")
@@ -39,4 +62,4 @@ def downloader():
                                as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(ip, port, debug=True)
