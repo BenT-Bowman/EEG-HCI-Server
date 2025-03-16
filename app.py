@@ -49,16 +49,16 @@ def setup():
 def eeg_reader():
     return render_template('EEG_Reader.html')
 
-@app.route("/download")
-def download_redirect():
-    return redirect('/setup/test.txt')
+# @app.route("/download")
+# def download_redirect():
+#     return redirect('/setup/test.txt')
 
 app.config["DOWNLOAD_FOLDER"]="D:\EEG HCI Project\Flask WebPage\static\download"
 # 
 @app.route("/downloader")
 def downloader():
     return send_from_directory(app.config["DOWNLOAD_FOLDER"], 
-                               "test.txt",
+                               "EEG_Reader.zip",
                                as_attachment=True)
 
 if __name__ == '__main__':
