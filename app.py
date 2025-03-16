@@ -53,7 +53,7 @@ def eeg_reader():
 # def download_redirect():
 #     return redirect('/setup/test.txt')
 
-app.config["DOWNLOAD_FOLDER"]="static\download"
+app.config["DOWNLOAD_FOLDER"]="static/download"
 # 
 @app.route("/downloader")
 def downloader():
